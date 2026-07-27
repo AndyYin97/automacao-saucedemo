@@ -48,3 +48,35 @@ automacao-saucedemo/
 │   └── api.spec.js             # Testes de API Backend
 ├── playwright.config.js        # Configurações do Playwright
 └── package.json
+
+🛠️ Como Executar o Projeto Localmente
+Pré-requisitos
+Node.js (versão 18 ou superior)
+
+Git instalado
+
+1. Clonar o repositório
+git clone [https://github.com/AndyYin97/automacao-saucedemo.git](https://github.com/AndyYin97/automacao-saucedemo.git)
+cd automacao-saucedemo
+
+2. Instalar as dependências
+npm install
+npx playwright install --with-deps
+
+3. Executar os testes
+Executar todos os testes (UI + API):
+npx playwright test
+    Executar apenas os testes de UI (SauceDemo):
+npx playwright test checkout
+    Executar apenas os testes de API:
+npx playwright test api
+    Executar no modo visual/headed (vendo o navegador abrir):
+npx playwright test checkout --headed
+
+4. Visualizar o Relatório de Testes (HTML Report)
+npx playwright show-report
+
+⚙️ Integração Contínua (CI/CD)
+O projeto conta com um workflow do GitHub Actions (playwright.yml) configurado para rodar a suíte completa de testes de forma automatizada em ambiente headless (Ubuntu) a cada push ou pull request na branch main.
+
+Desenvolvido por Andrey 🚀
